@@ -25,7 +25,7 @@ with open(input_file) as election_data:
         vote_total = vote_total +1 
 # read in candidate name 
         candidates_name = (row[2])
-# list of candidates
+# list of candidates and adding to it
         if candidates_name in candidates_list :
             candidate_index = candidates_list.index(candidates_name)
             candidates_votes[candidate_index] = candidates_votes[candidate_index] +1
@@ -36,6 +36,7 @@ with open(input_file) as election_data:
             
 print(f'{vote_total}')
 print(f'{candidates_list}')
+
 
 
 
