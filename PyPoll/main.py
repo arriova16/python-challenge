@@ -12,12 +12,9 @@ candidates_list = []
 candidates_votes = []
 
 
-
-
-
 # read file
 with open(input_file) as election_data:
-    reader = csv.reader(election_data, delimiter = ",")
+    reader = csv.reader(election_data)
     header = next(reader)
     
     for row in reader:
@@ -33,16 +30,21 @@ with open(input_file) as election_data:
             candidates_list.append(candidates_name)
             candidates_votes.append(1)
 
-            
-print(f'{vote_total}')
-print(f'{candidates_list}')
+# testing code           
+# print(f'{vote_total}')
+# print(f'{candidates_list}')
+
+# i want to get percentage of votes for each 
+# total number of votes for each candidate
+# winner of the election
+percent_votes = []
+vote_per_candidate = 0
+max_votes = []
 
 
+# winner
 
-
-
-        # remaing loop
-   
+ winner = candidates_list[max_votes]  
 
 # line break
 
@@ -60,10 +62,14 @@ print(f'{candidates_list}')
 
 # total votes each candidate won 
 # candidate_votes = 
-# # print(input_file)
+# # print(output_file)
 # output_file = os.path.join("analysis", "election_analysis.txt")
+# with open(output_file, "w", newline = '') as datafile:
+#     writer = csv.writer(datafile)
+
+
 
 # print("Election Results")
 # print("------------------------------------------")
-#  print(f"Total Votes:{vote_total}")
-#  print("------------------------------------------")
+# print(f"Total Votes:{vote_total}")
+# print("------------------------------------------")
