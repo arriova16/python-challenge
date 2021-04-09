@@ -59,32 +59,21 @@ winner = candidates_list[max_votes]
 # print(f'{candidates_votes}')
 # line break
 
-# i want to get the names of every candidate
-    
-# def candidates_votes(candidate_data):
-#     name = str(candidate_data[2])
-#     votes = int(candidate_data)
-    
-# #     if name == name :
-# #         votes = vote + 1
-# #     print(f"candidate names:{votes}")
-# #  percent of votes   
-# percent_votes_candidate = (won_vote/ vote_total)
 
-# total votes each candidate won 
-# candidate_votes = 
-# # print(output_file)
+# print(output_file)
 # output_file = os.path.join("analysis", "election_analysis.txt")
 # with open(output_file, "w", newline = '') as datafile:
 #     writer = csv.writer(datafile)
 
+# i need to get a list of votes per candidates and the percent of votes
+# needs to loop
 
-
-# print("Election Results")
-# print("------------------------------------------")
-# print(f"Total Votes:{vote_total}")
-# print("------------------------------------------")
-
-# print("------------------------------------------")
-
-# print("------------------------------------------")
+print("Election Results")
+print("------------------------------------------")
+print(f"Total Votes:{vote_total}")
+print("------------------------------------------")
+for x in range(len(candidates_list)):
+    print(f'{candidates_list[x]} : {percent_votes[x]} {candidates_votes[x]}')
+print("------------------------------------------")
+print(f'Election winner: {winner}')
+print("------------------------------------------")
