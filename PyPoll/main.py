@@ -38,14 +38,25 @@ with open(input_file) as election_data:
 # total number of votes for each candidate
 # winner of the election
 percent_votes = []
-vote_per_candidate = 0
-max_votes = []
+vote_per_candidate = candidates_votes[0]
+max_votes = 0
 
+# loop through the candidates and get the percent
+for x in range(len(candidates_list)):
+    percent = (candidates_votes[x]/vote_total * 100)
+    percent_votes.append(percent)
 
-# winner
+# winner within the candidate list
+    if candidates_votes[x] > vote_per_candidate:
+        vote_per_candidate = candidates_votes[x]
+        max_votes = x
+        
 
- winner = candidates_list[max_votes]  
-
+winner = candidates_list[max_votes]  
+# testing
+# print(f'{vote_per_candidate}')
+# print(f'{winner}')
+# print(f'{candidates_votes}')
 # line break
 
 # i want to get the names of every candidate
@@ -72,4 +83,8 @@ max_votes = []
 # print("Election Results")
 # print("------------------------------------------")
 # print(f"Total Votes:{vote_total}")
+# print("------------------------------------------")
+
+# print("------------------------------------------")
+
 # print("------------------------------------------")
