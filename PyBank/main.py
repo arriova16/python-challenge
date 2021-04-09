@@ -29,7 +29,11 @@ with open(csvpath) as budget_data:
     reader = csv.reader(budget_data)
     header = next(reader)
 
-
+# def average(profits):
+#         profits = int(profits[1])
+#         months = str(profits[0])
+  
+#         average_change = sum(total_months_profits)/ total_months
     for row in reader:
         profit_losses = float(row[1])
     #    total months 
@@ -41,9 +45,10 @@ with open(csvpath) as budget_data:
 #  print(total_months)
 # print(f'${total_amount}')
    
-        
-
 # i want the average change
+    
+
+        
 
 
 # max and min function 
