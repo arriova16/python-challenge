@@ -43,7 +43,7 @@ max_votes = 0
 
 # loop through the candidates and get the percent
 for x in range(len(candidates_list)):
-    percent = (candidates_votes[x]/vote_total * 100)
+    percent = round(candidates_votes[x]/vote_total * 100)
     percent_votes.append(percent)
 
 # winner within the candidate list
@@ -57,23 +57,30 @@ winner = candidates_list[max_votes]
 # print(f'{vote_per_candidate}')
 # print(f'{winner}')
 # print(f'{candidates_votes}')
-# line break
 
-
-# print(output_file)
-# output_file = os.path.join("analysis", "election_analysis.txt")
-# with open(output_file, "w", newline = '') as datafile:
-#     writer = csv.writer(datafile)
 
 # i need to get a list of votes per candidates and the percent of votes
 # needs to loop
-
 print("Election Results")
 print("------------------------------------------")
 print(f"Total Votes:{vote_total}")
 print("------------------------------------------")
 for x in range(len(candidates_list)):
-    print(f'{candidates_list[x]} : {percent_votes[x]} {candidates_votes[x]}')
+    print(f'{candidates_list[x]} : {percent_votes[x]}% ({candidates_votes[x]})')
 print("------------------------------------------")
 print(f'Election winner: {winner}')
 print("------------------------------------------")
+#  code for new line dataFile.write('%s\n' % line))
+#  print(output_file)
+output_file = os.path.join("election_analysis.txt")
+with open(output_file, "w", newline = '') as datafile:
+    
+    datafile.write("Election Results\n")
+    datafile.write("------------------------------------------\n")
+    datafile.write(f"Total Votes:{vote_total}\n")
+    datafile.write("------------------------------------------\n")
+    for x in range(len(candidates_list)):
+        datafile.write(f'{candidates_list[x]} : {percent_votes[x]}% ({candidates_votes[x]})\n')
+    datafile.write("------------------------------------------\n")
+    datafile.write(f'Election winner: {winner}\n')
+    datafile.write("------------------------------------------\n")
